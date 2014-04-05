@@ -9,13 +9,17 @@ GameState.prototype = {
         return this.data.players[this.data.in_action];
     },
 
-    getHand: function(player) {
-        return player.hole_cards;
+    getHand: function() {
+        return this.getOurPlayer().hole_cards;
     },
 
     rateHand: function() {
-        var hand = this.getHand(this.getOurPlayer());
+        var hand = this.getHand();
         return Rates.rateTwoCards(hand);
+    },
+
+    getHoldValue: function() {
+        return this.data.current_buy_in - this.getOurPlayer().bet;
     },
 
     getMinimumRaise: function() {

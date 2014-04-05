@@ -7,8 +7,6 @@ app.use(express.urlencoded());
 
 var request = require('request');
 
-var http = require('http');
-
 app.get('/', function (req, resback) {
 
     var cards = [

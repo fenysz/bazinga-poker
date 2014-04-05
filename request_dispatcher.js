@@ -1,5 +1,6 @@
 var GameState = require('./gamestate');
 var Rates = require('./rates');
+var RankingService = require('./rankingservice');
 
 module.exports = {
     apply: function(game_state_data) {
@@ -11,9 +12,17 @@ module.exports = {
         }
 
         if (gameState.isPreFlopState() && (rate === Rates.GOOD)) {
-            return gameState.getMinimumRaise();
+            return gameState.getHoldValue();
+
         } else if (rate === Rates.GOOD) {
-            return GameState.getMinimumRaise() + 50;
+            var cards = gameState.getHand().concat(gameState.data.community_cards),
+                rankingStat = RankingService.fetch(cards);
+
+            if (rankingStat.rank >= 2) {
+                return gameState.getMinimumRaise() + 200;
+            }            
+
+            return gameState.getHoldValue();
         }
 
         return 0;
