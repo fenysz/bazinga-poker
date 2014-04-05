@@ -10,8 +10,10 @@ module.exports = {
             return gameState.getMinimumRaise() + 200;
         }
 
-        if (rate === Rates.GOOD) {
-            return gameState.getMinimumRaise() + 50;
+        if (gameState.isPreFlopState() && (rate === Rates.GOOD)) {
+            return gameState.getMinimumRaise();
+        } else if (rate === Rates.GOOD) {
+            return GameState.getMinimumRaise() + 50;
         }
 
         return 0;

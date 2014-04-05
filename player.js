@@ -2,7 +2,7 @@ var RequestDispatcher = require('./request_dispatcher');
 
 module.exports = {
 
-    VERSION: "Mr Bazinga PreFlop Version",
+    VERSION: "Mr Bazinga PreFlop Version 2",
 
     bet_request: function (game_state_data) {
         return RequestDispatcher.apply(game_state_data);
