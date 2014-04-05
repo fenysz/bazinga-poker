@@ -12,7 +12,7 @@ module.exports = {
         }
 
         if (gameState.isPreFlopState() && (rate === Rates.GOOD)) {
-            return gameState.getHoldValue();
+            return gameState.getMinimumRaise();
 
         } else if (rate === Rates.GOOD) {
             var cards = gameState.getHand().concat(gameState.data.community_cards),
@@ -20,7 +20,7 @@ module.exports = {
 
             if (rankingStat.rank >= 2) {
                 return gameState.getMinimumRaise() + 200;
-            }            
+            }
 
             return gameState.getHoldValue();
         }
