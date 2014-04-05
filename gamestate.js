@@ -28,7 +28,20 @@ GameState.prototype = {
 
     isPreFlopState: function() {
         return this.data.community_cards.length === 0;
+    },
+
+    isFlop: function() {
+        return this.data.community_cards.length === 3;
+    },
+
+    isTurn: function() {
+        return this.data.community_cards.length === 4;
+    },
+
+    isRiver: function() {
+        return this.data.community_cards.length === 5;
     }
+
 };
 
 module.exports = GameState;
