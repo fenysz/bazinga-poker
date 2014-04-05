@@ -3,7 +3,9 @@ module.exports = {
     VERSION: "Mr Bazinga version 0.1",
 
     bet_request: function (game_state) {
-        return 500;
+	    var additional_raise = 100;
+	    console.log(game_state.bet);
+        return game_state.current_buy_in - game_state.players[game_state.in_action][game_state.bet] + (game_state.minimum_raise + additional_raise);
     },
 
     showdown: function (game_state) {
