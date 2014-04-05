@@ -43,7 +43,7 @@ module.exports = {
         }
 
         if (gameState.isPreFlopState() && (rate === Rates.GOOD)) {
-            return gameState.getMinimumRaise();
+            return gameState.getHoldValue();
         } else if (rate === Rates.GOOD) {
             return gameState.getHoldValue();
         }
