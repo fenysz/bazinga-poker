@@ -1,10 +1,10 @@
 
 module.exports = {
 
-  VERSION: "Default JavaScript folding player",
+  VERSION: "Mr Bazinga version 0.1",
 
   bet_request: function(game_state) {
-    return 0;
+    return 20;
   },
 
   showdown: function(game_state) {
