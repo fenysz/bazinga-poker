@@ -28,8 +28,6 @@ var Rates = {
             rate += 3;
         }
 
-        console.log('Rate: ', rate);
-
         if (rate >= 20) {
             return Rates.VERY_GOOD;
         }
