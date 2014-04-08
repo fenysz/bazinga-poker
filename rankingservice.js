@@ -8,7 +8,7 @@ module.exports = {
                 body: 'cards=' + JSON.stringify(cards),
 
                 protocol: 'http',
-                host: '192.168.57.181',
+                host: 'localhost',
                 port: 2048,
                 path: '/'
             }),
